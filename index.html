@@ -20,11 +20,14 @@
     <title>Ana Sayfa</title>
 
     <style>
-        body { margin: 0; padding: 0; 
+        body { 
+          margin: 0; 
+          padding: 0; 
           overflow-x: hidden;}
 
         #hero {
             position: relative;
+            overflow: hidden;
         }
 
         #hero video {
@@ -44,6 +47,10 @@
             top: 0;
             left: 0;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
             display: flex;
             align-items: center;
@@ -54,12 +61,14 @@
         #hero .content h1 {
             color: #FFF;
             font-family: Arial, sans-serif;
+            margin: 0;
         }
 
         #hero .content p {
             font-size: 18px;
             color: #FFF;
             font-family: Arial, sans-serif;
+            margin:0;
         }
 
         #hero .logo-navbar {
@@ -91,6 +100,27 @@
         #hero .logo-navbar ul.navbar-nav li.nav-item a {
             color: #FFF;
             text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            #hero .logo-navbar {
+                top: 10px;
+                left: 10px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #hero .logo-navbar img {
+                max-width: 200px;
+            }
+
+            #hero .content h1 {
+                font-size: 24px;
+            }
+
+            #hero .content p {
+                font-size: 16px;
+            }
         }
         h1 {
             font-size: 3em;
