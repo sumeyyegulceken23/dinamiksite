@@ -81,11 +81,7 @@
 
     @media (max-width: 768px) {
       .navbar-nav {
-        flex-direction: column;
-      }
-
-      .nav-item {
-        margin-bottom: 10px;
+        display: none;
       }
     }
   </style>
@@ -106,19 +102,32 @@
         <a class="navbar-brand" href="#">
           <img src="img/yataylogo.png" alt="Logo">
         </a>
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="deneme.html">Ana Sayfa</a></li>
-            <li class="nav-item"><a class="nav-link" href="satranc.html">Satranç</a></li>
-            <li class="nav-item"><a class="nav-link" href="etüt.html">Etüt</a></li>
-            <li class="nav-item"><a class="nav-link" href="müzik.html">Müzik</a></li>
-            <li class="nav-item"><a class="nav-link" href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
-            <li class="nav-item"><a class="nav-link" href="resim.html">Resim</a></li>
-            <li class="nav-item"><a class="nav-link" href="ingilizce.html">İngilizce</a></li>
-            <li class="nav-item"><a class="nav-link" href="hızlıokuma.html">Hızlı Okuma</a></li>
-            <li class="nav-item"><a class="nav-link" href="basarilarimiz.html">Başarılarımız</a></li>
-            <li class="nav-item"><a class="nav-link btn btn-danger" href="iletişim.html">İletişim</a></li>
-          </ul>
+
+        <!-- Navbar toggler for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Offcanvas Navbar for mobile -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+              <li class="nav-item"><a class="nav-link" href="satranc.html">Satranç</a></li>
+              <li class="nav-item"><a class="nav-link" href="etüt.html">Etüt</a></li>
+              <li class="nav-item"><a class="nav-link" href="müzik.html">Müzik</a></li>
+              <li class="nav-item"><a class="nav-link" href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
+              <li class="nav-item"><a class="nav-link" href="resim.html">Resim</a></li>
+              <li class="nav-item"><a class="nav-link" href="ingilizce.html">İngilizce</a></li>
+              <li class="nav-item"><a class="nav-link" href="hızlıokuma.html">Hızlı Okuma</a></li>
+              <li class="nav-item"><a class="nav-link" href="basarilarimiz.html">Başarılarımız</a></li>
+              <li class="nav-item"><a class="nav-link btn btn-danger" href="iletişim.html">İletişim</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -136,3 +145,4 @@
 
 </body>
 </html>
+
