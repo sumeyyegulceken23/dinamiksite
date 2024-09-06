@@ -22,6 +22,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      z-index: -1; /* Video'nun içerikten arka planda kalmasını sağlar */
     }
 
     .navbar {
@@ -58,13 +59,15 @@
     }
 
     .content {
-      position: absolute;
-      bottom: 50px;
+      position: relative; /* Z-index sıfırlandı ve relative yapıldı */
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       text-align: center;
       color: white;
       z-index: 1;
+      padding: 20px; /* Padding added to ensure content is not blocked */
+      background-color: rgba(0, 0, 0, 0.5); /* Background with some opacity to improve text visibility */
     }
 
     .content h1 {
@@ -78,6 +81,37 @@
     .content .btn {
       background-color: red;
       border: none;
+    }
+
+    /* Offcanvas Styles */
+    .offcanvas {
+      background-color: #343a40; /* Dark background for offcanvas */
+      color: white; /* Text color in offcanvas */
+      width: 250px; /* Set a fixed width for offcanvas */
+    }
+
+    .offcanvas-header {
+      border-bottom: 1px solid #495057; /* Light border for separation */
+    }
+
+    .offcanvas-body {
+      padding: 0;
+    }
+
+    .offcanvas-body .nav-link {
+      color: white; /* Text color for links in offcanvas */
+      font-weight: bold;
+      padding: 15px 20px; /* Padding for better touch experience */
+      border-bottom: 1px solid #495057; /* Border between items */
+    }
+
+    .offcanvas-body .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1); /* Hover effect */
+      color: red; /* Link hover color */
+    }
+
+    .offcanvas-body .nav-item:last-child .nav-link {
+      border-bottom: none; /* Remove border from the last item */
     }
 
     @media (max-width: 768px) {
