@@ -108,7 +108,7 @@
       font-weight: bold;
       padding: 15px 20px;
       border-bottom: 1px solid #495057;
-      display: block; /* Offcanvas menüde alt alta gelsin */
+      display: block;
     }
 
     .offcanvas-body .offcanvas-nav-link:hover {
@@ -124,11 +124,18 @@
       .desktop-nav {
         display: none; /* Mobilde normal navbar gizlenir */
       }
+
       .navbar-toggler {
         display: block; /* Navbar toggler sadece mobilde görünür */
       }
+
+      #hero video {
+        height: 300px; /* Mobil için video boyutunu küçült */
+        object-fit: cover;
+      }
+
       .offcanvas {
-        display: block; /* Offcanvas sadece mobilde görünür */
+        width: 100%; /* Mobilde offcanvas tam ekran genişlikte açılsın */
       }
     }
 
@@ -136,6 +143,7 @@
       .navbar-toggler {
         display: none; /* Toggler düğmesi sadece mobilde görünür */
       }
+
       .offcanvas {
         display: none; /* Offcanvas menü masaüstü görünümde gizlenir */
       }
