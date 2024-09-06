@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
+    <title>Ana Sayfa</title>
+
+    <style>
+        body { margin: 0; padding: 0; 
+          overflow-x: hidden;}
+
+        #hero {
+            position: relative;
+        }
+
+        #hero video {
+            height: 100vh;
+            width: 100%;
+            background-position: absolute;
+            z-index: 10;
+            object-fit: cover;
+        }
+
+        #hero .content {
+            background: rgba(0, 0, 0, 0.5);
+            height: 100%;
+            width: 100%;
+            z-index: 20;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; /* Center content vertically */
+        }
+
+        #hero .content h1 {
+            color: #FFF;
+            font-family: Arial, sans-serif;
+        }
+
+        #hero .content p {
+            font-size: 18px;
+            color: #FFF;
+            font-family: Arial, sans-serif;
+        }
+
+        #hero .logo-navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: calc(100% - 40px); /* Adjust the width as needed */
+        }
+
+        #hero .logo-navbar img {
+            width: 300px; /* Adjust the width of the logo as needed */
+        }
+
+        #hero .logo-navbar ul.navbar-nav {
+            list-style-type: none;
+            display: inline; /* Change display to inline */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        #hero .logo-navbar ul.navbar-nav li.nav-item {
+            margin-right: 20px; /* Adjust the spacing between navbar items */
+            display: inline-block; /* Display items inline-block */
+        }
+
+        #hero .logo-navbar ul.navbar-nav li.nav-item a {
+            color: #FFF;
+            text-decoration: none;
+        }
+        h1 {
+            font-size: 3em;
+            color: #394240;
+            text-align: center;
+            margin-top: 100px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        h1 span {
+            color: rgb(172, 214, 209); /* Dinamik vurgusu için kırmızı renk */
+        }
+
+        /* İlgili stil ayarlamalarını buraya ekleyebilirsiniz */
+
+        h4 span {
+            font-size: 30px;
+            font-weight: bold; /* Koyu siyah başlık için */
+            color: black; /* Koyu siyah renk */
+            margin-left: -35px;
+        }
+
+        h4  {
+             /* Normal kalınlık (ince yazı) */
+            font-size: 90px;
+            color: gray; /* İnce yazı rengi */
+            font-size: medium;
+            margin-left: 870px;
+        }
+        #image1, #image2, #image3, #image4{
+    width: 270px;
+    height: 300px;
+    border: 10px solid rgb(172, 214, 209);
+    border-radius: 50%; /* Use border-radius: 50% for a perfect circle */
+    object-fit: cover;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: all 0.3s ease-out;
+    margin-top: 10px; /* Örneğin 10px olarak ayarlayabilirsiniz */
+    margin-left: 10px; /* Örneğin 10px olarak ayarlayabilirsiniz */
+}
+
+
+
+     #image2:hover, #image3:hover, #image4:hover, #image5:hover {
+        transform: scale(1.2);
+    }
+
+    .image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 270px); /* 4 sütun */
+    gap: 10px; /* Resimler arasındaki boşluk */
+    justify-content: center; /* Merkezi hizalama */
+}
+
+.text-container {
+    text-align: center; /* Başlık metnini ortalar */
+    margin-bottom: 20px; /* Resimlerin üstünde biraz boşluk bırakır */
+}
+
+.main-title {
+    margin: 0; /* Varsayılan margin'leri sıfırlar */
+    font-size: 2em; /* Başlık boyutunu ayarlar */
+}
+
+.main-title span {
+    display: block; /* Alt başlığı bir satıra getirir */
+    font-size: 1.5em; /* Alt başlık boyutunu ayarlar */
+}
+
+.image-container img {
+    width: 270px;
+    height: 300px;
+    border: 10px solid rgb(172, 214, 209);
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition: all 0.3s ease-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+
+.custom-image {
+    width: 100%; /* Div'i tamamen kapla */
+    height: 100%; /* Div'in yarısı kadar olsun */
+    object-fit: cover; /* Resmi tamamen kapsayacak şekilde boyutlandır */
+}
+
+
+.centered-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.carousel {
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%; /* Tüm fotoğrafların genişliği eşit olacak şekilde ayarlanıyor */
+  height: auto; /* Oranları korumak için */
+}
+
+.shape {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto;
+  }
+  .shape:before, .shape:after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid black;
+    margin: 0 10px;
+  }
+  .card-container {
+  display: flex;
+  justify-content: space-around; /* Kartların eşit aralıklarla yayılması */
+  margin: 20px auto;
+}
+
+.card {
+  width: calc(30% - 10px); /* Kartların genişliği azaltıldı */
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0 5px; /* Sağ ve sol boşluklar azaltıldı */
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  margin: 0;
+}
+
+.card-description {
+  margin-top: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.card-more-info-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-more-info-button span {
+  margin-right: 5px;
+}
+
+.card-more-info-button:hover {
+  background-color: #0056b3;
+}
+
+.galeri{
+  margin: 5px;
+  border: 1px solid white;
+  float:left;
+  width: 180px;
+}
+
+.galeri:hover{
+  border: 2px solid rgb(85, 147, 140);
+}
+
+.galeri img{
+  width: 100%;
+  height: auto;
+}
+
+.galeri.aciklama{
+  padding: 10px;
+  text-align: center;
+
+}
+
+
+.bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      /*footer */
+.bi-facebook {
+    color: #1877F2; /* Facebook Blue */
+}
+
+.bi-whatsapp {
+    color: #25D366; /* WhatsApp Green */
+}
+
+.bi-instagram {
+    /* Instagram Pink for the fill color */
+    color: #E4405F;
+    
+    /* Background gradient for the Instagram icon */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    
+    /* Apply text gradient with clipping */
+    -webkit-background-clip: text; /* For Safari and older Chrome */
+    background-clip: text;         /* Standard property */
+    
+    /* Use text fill color to ensure the text is transparent */
+    -webkit-text-fill-color: transparent; /* For Safari and Chrome */
+}
+
+/*footer */
+.footer {
+  width: 100%;
+  margin-top: 15px; /* Pushes footer to the bottom */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bi-facebook {
+    color: #1877F2; /* Facebook Blue */
+}
+
+.bi-whatsapp {
+    color: #25D366; /* WhatsApp Green */
+}
+
+.bi-instagram {
+    /* Instagram Pink for the fill color */
+    color: #E4405F;
+    
+    /* Background gradient for the Instagram icon */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    
+    /* Apply text gradient with clipping */
+    -webkit-background-clip: text; /* For Safari and older Chrome */
+    background-clip: text;         /* Standard property */
+    
+    /* Use text fill color to ensure the text is transparent */
+    -webkit-text-fill-color: transparent; /* For Safari and Chrome */
+}
+
+.paragraf{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+  margin-bottom: 20px;
+  text-align: justify;
+
+}
+
+.container {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+    </style>
+</head>
+<body>
+    <!--video kısmı-->
+<div id="hero">
+  <video autoplay loop muted>
+    <source src="dinamik.mp4" type="video/mp4">
+</video>
+  <div class="content">
+      <div class="logo-navbar">
+          <div class="logo">
+              <img src="img/yataylogo.png">
+          </div>
+          <div class="navbar">
+              <ul class="navbar-nav">
+                  <li class="nav-item"><a href="index.html">Ana Sayfa</a></li>
+                  <li class="nav-item"><a href="satranc.html">Satranç</a></li>
+                  <li class="nav-item"><a href="etüt.html">Etüt</a></li>
+                  <li class="nav-item"><a href="müzik.html">Müzik</a></li>
+                  <li class="nav-item"><a href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
+                  <li class="nav-item"><a href="resim.html">Resim</a></li>
+                  <li class="nav-item"><a href="ingilizce.html">İngilizce</a></li>
+                  <li class="nav-item"><a href="hızlıokuma.html">Hızlı Okuma</a></li>
+                  <li class="nav-item"><a href="basarilarimiz.html">Başarılarımız</a></li>
+                  <li style="background-color: red;padding: 8px 15px !important;" class="nav-item"><a href="iletişim.html">İletişim</a></li>
+              </ul>
+          </div>
+      </div>
+      
+      <div style="margin-top: -100px;" class="container">
+        <h1><span style="color: red;" id="Youtube_Sanagrafi">Dinamik Kişisel Eğitim Merkezi</span></h1>
+        <p>"Potansiyelinizi Keşfedin, Hayatınızı Dönüştürün!"</p>
+        <a href="iletişim.html" class="btn btn-danger">Hemen Başla</a>
+      </div>
+  </div>
+</div>
+<!--resim-->
+<main style="margin-top: -1px;">
+  <div class="text-container">
+      <h1 class="main-title">Keşfet, Öğren, Değiş! <br> <span>Dinamik Kişisel Gelişim Merkezi</span> ile Tanış!</h1>
+  </div>  
+  <div class="image-container">
+      <img id="image1" src="img/c5.jpg">
+      <img id="image2" src="img/c2.jpg">
+      <img id="image3" src="img/c3.jpg">
+      <img id="image4" src="img/c4.jpg">
+      <img id="image5" src="img/s4.jpg">
+      <img id="image6" src="img/s5.png">
+      <img id="image7" src="img/s6.png">
+      <img id="image8" src="img/s7.png">
+  </div>
+</main>
+
+
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="margin-top: -10px;" class="section-header">
+                    <h1 class="widget-title">5,6 ve 7. SINIF ETÜT</h1>
+                    <div class="shape"> 
+                        <div class="shape-before"></div>
+                        <span>⭐️</span> <!-- Yıldız işareti yerine başka bir şekil kullanabilirsiniz -->
+                        <div class="shape-after"></div>
+                      </div>
+                    </div>
+
+                    <div class="separator">
+                        <span></span>
+                    </div>
+
+                    <p  class="wow fadeInDown animated animated" style="visibility: visible; animation-name: fadeInDown; text-align: center;font-size: 20px;color: #64646d;">
+                        5, 6 ve 7. sınıf etüt dönemi, öğrencilerin akademik başarılarını desteklemek ve eksikliklerini gidermek için önemli bir fırsat sunar.    </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="card-container">
+            <div class="card">
+              <img src="img/e1.JPG">
+            </div>
+            <div class="card">
+            <img src="img/e2.JPG">
+            </div>
+            <div class="card">
+            <img src="img/e3.JPG">
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <a href="etüt.html" style="text-decoration: none;">
+              <button style="background-color: rgb(172, 214, 209); color: #fff; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;" type="button" class="btn btn-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                  </svg>
+                  <span style="vertical-align: middle; color: white;font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;margin-left: 5px;">Daha fazla bilgi için tıklayın</span>
+              </button>
+          </a>
+          
+        </div>
+    </main>
+    <!--2.kısım -->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h1 class="widget-title">ONLİNE VE YÜZYÜZE SATRANÇ DERSLERİ</h1>
+                        <div class="shape"> 
+                            <div class="shape-before"></div>
+                            <span>⭐️</span> <!-- Yıldız işareti yerine başka bir şekil kullanabilirsiniz -->
+                            <div class="shape-after"></div>
+                          </div>
+                        </div>
+    
+                        <div class="separator">
+                            <span></span>
+                        </div>
+    
+                        <p  class="wow fadeInDown animated animated" style="visibility: visible; animation-name: fadeInDown; text-align: center;font-size: 20px;color: #64646d;">
+                            Satranç kurslarımıza katılarak, zihinsel gücünüzü sınayın, stratejik düşünme yeteneklerinizi geliştirin ve satranç tutkusunu paylaşan bir topluluğun bir parçası olun. Unutmayın, satranç sadece bir oyun değil, aynı zamanda bir yaşam tarzıdır.  </div>
+                </div>
+            </div>
+        </div>
+        <main>
+            <div class="card-container">
+                <div class="card">
+                  <img src="img/e6.jpeg">
+                </div>
+                <div class="card">
+                <img src="img/e7.jpeg">
+                </div>
+                <div class="card">
+                <img src="img/e8.jpeg">
+                </div>
+              </div>
+    
+    
+              <div style="text-align: center;">
+                <a href="satranc.html" style="text-decoration: none;">
+                  <button style="background-color: rgb(172, 214, 209); color: #fff; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;" type="button" class="btn btn-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                      </svg>
+                      <span style="vertical-align: middle; color: white;font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;margin-left: 5px;">Daha fazla bilgi için tıklayın</span>
+                  </button>
+              </a>      
+            </div>
+        </main> 
+    <!--3.kısım -->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h1 class="widget-title">ROBOTİK KODLAMA ve YAZILIM DERSLERİ</h1>
+                        <div class="shape"> 
+                            <div class="shape-before"></div>
+                            <span>⭐️</span> <!-- Yıldız işareti yerine başka bir şekil kullanabilirsiniz -->
+                            <div class="shape-after"></div>
+                          </div>
+                        </div>
+    
+                        <div class="separator">
+                            <span></span>
+                        </div>
+    
+                        <p  class="wow fadeInDown animated animated" style="visibility: visible; animation-name: fadeInDown; text-align: center;font-size: 20px;color: #64646d;">
+                            Robotik kodlama ve yazılım dersleri, günümüzün teknoloji odaklı dünyasında hayati bir öneme sahiptir. Bu dersler, öğrencilere dijital beceriler kazandırırken aynı zamanda yaratıcılıklarını ve problem çözme yeteneklerini geliştirmelerine olanak tanır.                </div>
+            </div>
+        </div>
+        <main>
+            <div class="card-container">
+                <div class="card">
+                  <img src="img/robot3.jpeg">
+                </div>
+                <div class="card">
+                <img src="img/robot2.jpeg">
+                </div>
+                <div class="card">
+                <img src="img/robot4.jpeg">
+                </div>
+              </div>
+    
+              <div style="text-align: center;">
+                <a href="yazılım.html" style="text-decoration: none;">
+                  <button style="background-color: rgb(172, 214, 209); color: #fff; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;" type="button" class="btn btn-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                      </svg>
+                      <span style="vertical-align: middle; color: white;font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;margin-left: 5px;">Daha fazla bilgi için tıklayın</span>
+                  </button>
+              </a>
+            </div>
+        </main>
+          
+       <!--4.kısım-->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h1 class="widget-title">MÜZİK DERSLERİ</h1>
+                        <div class="shape"> 
+                            <div class="shape-before"></div>
+                            <span>⭐️</span> <!-- Yıldız işareti yerine başka bir şekil kullanabilirsiniz -->
+                            <div class="shape-after"></div>
+                          </div>
+                        </div>
+    
+                        <div class="separator">
+                            <span></span>
+                        </div>
+    
+                        <p  class="wow fadeInDown animated animated" style="visibility: visible; animation-name: fadeInDown; text-align: center;font-size: 20px;color: #64646d;">
+                            Sanatın Büyüleyici Dünyasıyla Tanışın <br>
+                            Müzik, sadece bir hobiden daha fazlasıdır; duygularımızı ifade etmenin, ruhumuzu beslemenin ve hayatı daha derinlemesine yaşamanın bir yolu olarak görülür. Müzik dersleri, öğrencilerin bu sanatın büyüleyici dünyasını keşfetmelerine ve kendilerini ifade etmelerine olanak tanır. 
+                        </div>
+            </div>
+        </div>
+        <main>
+    
+            <div class="card-container">
+                <div class="card">
+                  <img src="img/p1.jpeg">
+                </div>
+                <div class="card">
+                <img src="img/p2.jpeg">
+                </div>
+                <div class="card">
+                <img src="img/p3.jpeg">
+                </div>
+              </div>
+    
+    
+              <div style="text-align: center;">
+                <a href="müzik.html" style="text-decoration: none;">
+                  <button style="background-color: rgb(172, 214, 209); color: #fff; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;" type="button" class="btn btn-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                      </svg>
+                      <span style="vertical-align: middle; color: white;font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;margin-left: 5px;">Daha fazla bilgi için tıklayın</span>
+                  </button>
+              </a>
+              
+            </div>
+        </main>
+           <!--5.kısım-->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h1 class="widget-title">RESİM DERSLERİ</h1>
+                        <div class="shape"> 
+                            <div class="shape-before"></div>
+                            <span>⭐️</span> <!-- Yıldız işareti yerine başka bir şekil kullanabilirsiniz -->
+                            <div class="shape-after"></div>
+                          </div>
+                        </div>
+    
+                        <div class="separator">
+                            <span></span>
+                        </div>
+    
+                        <p  class="wow fadeInDown animated animated" style="visibility: visible; animation-name: fadeInDown; text-align: center;font-size: 20px;color: #64646d;">
+                            Sanatın İfadesiyle Yaratıcılığınızı Keşfedin <br>
+                            Resim, duyguları, düşünceleri ve hayal gücünü tuval üzerinde hayata geçirmenin güçlü bir yoludur. Resim dersleri, öğrencilere bu yaratıcı ifade biçimini keşfetme ve geliştirme fırsatı sunar.                        </div>
+            </div>
+        </div>
+    
+        <main>
+    
+            <div class="card-container">
+                <div class="card">
+                  <img src="img/resimm_01.jpg">
+                </div>
+                <div class="card">
+                <img src="img/resim3.jpeg">
+                </div>
+                <div class="card">
+                <img src="img/resim4.jpeg">
+                </div>
+              </div>
+    
+    
+              <div style="text-align: center;">
+                <a href="resim.html" style="text-decoration: none;">
+                  <button style="background-color: rgb(172, 214, 209); color: #fff; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;" type="button" class="btn btn-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                      </svg>
+                      <span style="vertical-align: middle; color: white;font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;margin-left: 5px;">Daha fazla bilgi için tıklayın</span>
+                  </button>
+              </a>
+              
+            </div>
+        </main>
+                   <!--5.kısım-->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h1 class="widget-title">İNGİLİZCE DERSLERİ</h1>
+                        <div class="shape"> 
+                            <div class="shape-before"></div>
+                            <span>⭐️</span> <!-- Yıldız işareti yerine başka bir şekil kullanabilirsiniz -->
+                            <div class="shape-after"></div>
+                          </div>
+                        </div>
+    
+                        <div class="separator">
+                            <span></span>
+                        </div>
+    
+                        <p  class="wow fadeInDown animated animated" style="visibility: visible; animation-name: fadeInDown; text-align: center;font-size: 20px;color: #64646d;">
+                            Dünya Dilini Keşfedin ve İletişimin Gücünü Kavrayın <br>
+                            Bu derslerde, öğrenciler temel İngilizce dil becerilerini öğrenirler: konuşma, dinleme, okuma ve yazma. Aynı zamanda dilbilgisi kurallarını ve kelime dağarcığını genişletmek de önemlidir. Bu beceriler, öğrencilerin İngilizceyi etkili bir şekilde kullanmalarına ve başkalarıyla akıcı bir şekilde iletişim kurmalarına yardımcı olur.            </div>
+        </div>
+        <main>
+            <div class="card-container">
+                <div class="card">
+                  <img src="img/ing1.JPG">
+                </div>
+                <div class="card">
+                <img src="img/ing2.JPG">
+                </div>
+                <div class="card">
+                <img src="img/ing3.JPG">
+                </div>
+              </div>
+    
+    
+              <div style="text-align: center;">
+                <a href="ingilizce.html" style="text-decoration: none;">
+                  <button style="background-color: rgb(172, 214, 209); color: #fff; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;" type="button" class="btn btn-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                      </svg>
+                      <span style="vertical-align: middle; color: white;font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;margin-left: 5px;">Daha fazla bilgi için tıklayın</span>
+                  </button>
+              </a>
+              
+            </div>
+        </main>
+         <!--6.kısım-->
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header">
+                        <h1 class="widget-title">HIZLI OKUMA DERSLERİ</h1>
+                        <div class="shape"> 
+                            <div class="shape-before"></div>
+                            <span>⭐️</span> <!-- Yıldız işareti yerine başka bir şekil kullanabilirsiniz -->
+                            <div class="shape-after"></div>
+                          </div>
+                        </div>
+    
+                        <div class="separator">
+                            <span></span>
+                        </div>
+    
+                        <p  class="wow fadeInDown animated animated" style="visibility: visible; animation-name: fadeInDown; text-align: center;font-size: 20px;color: #64646d;">
+                            Bilginin Gücünü Artırın, Zamanınızı Verimli Kullanın <br>
+                            Hızlı okuma dersleri, öğrencilere zaman yönetimi becerileri kazandırırken aynı zamanda bilgiyi daha etkili bir şekilde işleme ve hatırlama yeteneklerini geliştirir. Bu dersler, öğrencilerin sınavlara hazırlık süreçlerini optimize etmelerine ve günlük hayatta daha verimli olmalarına olanak tanır.         </div>
+        </div>
+        <main>
+    
+            <div class="card-container">
+                <div class="card">
+                  <img src="img/ing1.JPG">
+                </div>
+                <div class="card">
+                <img src="img/ing2.JPG">
+                </div>
+                <div class="card">
+                <img src="img/ing3.JPG">
+                </div>
+              </div>
+    
+              <div style="text-align: center;">
+                <a href="hızlıokuma.html" style="text-decoration: none;">
+                  <button style="background-color: rgb(172, 214, 209); color: #fff; padding: 10px 20px; border-radius: 10px; font-size: 16px; font-weight: bold;" type="button" class="btn btn-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                      </svg>
+                      <span style="vertical-align: middle; color: white;font-size: large;font-family: Verdana, Geneva, Tahoma, sans-serif;margin-left: 5px;">Daha fazla bilgi için tıklayın</span>
+                  </button>
+              </a>
+              
+            </div>
+        </main>
+          <!--Footer-->
+  <footer style="margin-top: 30px;" class="text-white text-center text-lg-start bg-dark footer">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row mt-4">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 style="color: red; text-align: c" class="text-uppercase mb-4">BİZ KİMİZ</h5>
+  
+          <p class="paragraf">
+            Dinamik Kişisel Eğitim Merkzi 2013 yılında hizmet vermeye başlamıştır. İlk hizmet vermeye başladığı zamanlarda sadece satranç dersleri veriliyordu ancak daha sonralarda yeni yerine taşınması ile birlikte birçok alanda hizmet vermeye başlamıştır.
+          </p>
+  
+          <p class="paragraf">
+            Satranç, robotik kodlama, yazılım, inginilce, etüt, resim, müzik ve birçok alanda uzman eğitmenlerimiz tarafından eğitimler verilmektedir.
+          </p>
+  
+          <div class="mt-4">
+            <!-- Facebook -->
+           <a href="https://www.facebook.com/profile.php?id=100084381254663"> 
+              <svg  xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+              </svg>
+          </a>
+
+            <!-- whatsapp-->
+            <a href="https://wa.me/1234567890"> <svg style="margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+            </svg></a>  
+             <!-- instagram -->
+             <a href="https://www.instagram.com/dinamikkurss/"><svg style="margin-left: 10px;" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+            </svg></a>        
+          </div>  
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 style="color: red;  margin-left: 20px;" class="text-uppercase mb-4">İLETİŞİM</h5>
+          <ul class="fa-ul" style="margin-top: 20px;">
+            <div class="mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+              </svg>   
+              Cumhuriyet mah. Şafak sokak. no:6 Büyükçekmece/İstanbul
+            </div>
+
+            <div class="mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+              </svg> dinamik@kisielegitimmerkezi.com </div>
+              
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-forward" viewBox="0 0 16 16">
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zm10.762.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708"/>
+              </svg>  
+              0555458478          
+          </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 style="color: red; text-align: left;" class="text-uppercase mb-4">AÇILIŞ SAATLERİ</h5>
+  
+          <table class="table text-center text-white">
+            <tbody class="fw-normal">
+              <tr>
+                <td>Pazartesi - Cuma:</td>
+                <td>12:00-20:00</td>
+              </tr>
+              <tr>
+                <td>Cumartesi:</td>
+                <td>09:00-20:00</td>
+              </tr>
+              <tr>
+                <td>Pazar:</td>
+                <td>10:00-20:00</td>
+              </tr>
+            </tbody>
+          </table>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.3204063836492!2d28.622121375130394!3d41.018245618812536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55f57267279ab%3A0xea99d76d26d0b49c!2sDinamik%20Ki%C5%9Fisel%20Geli%C5%9Fim%20Kursu!5e0!3m2!1str!2str!4v1724840940456!5m2!1str!2str" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
