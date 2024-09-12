@@ -9,75 +9,128 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-
     <title>Etüt</title>
     <style>
-             body { margin: 0; padding: 0; }
+     body { margin: 0; padding: 0; }
 
-#hero {
-    position: relative;
-}
+  /*navbar başlangıç */
+      #foto {
+          height: 100vh; /* Cover the entire viewport height */
+          width: auto; /* Maintain aspect ratio */
+      }
+      #hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+          }
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 0;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-start; /* Sola hizalamak için */
+      align-items: center;
+    }
+    .navbar-brand img {
+      height: 70px;
+    }
+    .navbar-brand {
+      margin-right: 20px; /* Logo ve menü arasında boşluk bırak */
+    }
+    .desktop-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 0; /* Solda hizalanması için 0 yapıyoruz */
+    }
+    .desktop-nav .nav-item {
+      margin: 0 5px;     
+    }
+    /*masaüstü navbar */
+    .desktop-nav .nav-link {
+    font-weight: bold;
+    white-space: nowrap;
+    background: linear-gradient(45deg, #a2c2e1, #d0e3f0);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 5s infinite;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+    .desktop-nav .nav-link:hover {
+      color: red;
+    }
+  /*masaütü navbar bitişi */
+  /*mobil navbar*/
+    .offcanvas {
+      background-color: #343a40;
+      color: white;
+      width: 250px;
+    }
+    .offcanvas-header {
+      border-bottom: 1px solid #495057;
+    }
+    .offcanvas-body {
+      padding: 0;
+    }
+    .offcanvas-body .offcanvas-nav-item {
+      margin-bottom: 0;
+    }
+    .offcanvas-body .offcanvas-nav-link {
+      color: white;
+      font-weight: bold;
+      padding: 15px 20px;
+      border-bottom: 1px solid #495057;
+      display: block; /* Offcanvas menüde alt alta gelsin */
+    }
+    .offcanvas-body .offcanvas-nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: red;
+    }
+    .offcanvas-body .offcanvas-nav-item:last-child .offcanvas-nav-link {
+      border-bottom: none;
+    }
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none; /* Mobilde normal navbar gizlenir */
+      }
+      .navbar-toggler {
+        display: block; /* Navbar toggler sadece mobilde görünür */
+      }
+      .offcanvas {
+        display: block; /* Offcanvas sadece mobilde görünür */
+      }
+    }
+    @media (min-width: 769px) {
+      .navbar-toggler {
+        display: none; /* Toggler düğmesi sadece mobilde görünür */
+      }
+      .offcanvas {
+        display: none; /* Offcanvas menü masaüstü görünümde gizlenir */
+      }
+    }
+    /*navbar bitiş */
 
-#foto {
-    height: 100vh; /* Cover the entire viewport height */
-    width: auto; /* Maintain aspect ratio */
-}
-
-
-#hero .content {
-    background: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; /* Center content vertically */
-    color: #FFF;
-    font-family: Arial, sans-serif;
-}
-
-#hero .logo-navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: calc(100% - 40px); /* Adjust the width as needed */
-}
-
-#hero .logo-navbar img {
-    width: 300px; /* Adjust the width of the logo as needed */
-}
-
-#hero .logo-navbar ul.navbar-nav {
-    list-style-type: none;
-    display: inline; /* Change display to inline */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-}
-
-#hero .logo-navbar ul.navbar-nav li.nav-item {
-    margin-right: 20px; /* Adjust the spacing between navbar items */
-    display: inline-block; /* Display items inline-block */
-}
-
-#hero .logo-navbar ul.navbar-nav li.nav-item a {
-    color: #FFF;
-    text-decoration: none;
-}
-
+    
+    /*bölüm 2 */
 .bölüm2 {
         margin-top: 20px; /* Adjust the margin-top as needed */
         padding: 20px; /* Aradaki boşluğun iç kenar boşluğu */
         overflow: hidden; /* İçeriğin dışarı taşmasını engelle */
     }
-
     .container {
     overflow-x: auto;
 }
@@ -88,15 +141,50 @@
     text-align: center;
     letter-spacing: 1px;
     line-height: 1.5;
+    color: #333; /* Başlık rengi */
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #ff6f61, #d4a5a5); /* Arka plan gradyanı */
+    background-size: 200% 100%; /* Gradyanı hareketli hale getirmek için */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s linear infinite;
 }
 
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+/* Metin için küçük bir gölge efekti */
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.section-title:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 .kart {
     position: relative; /* Kartın konumunu referans alır */
     width: 100%;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 0;
-    margin: 10px;
+    margin-top: -20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #fff;
@@ -169,32 +257,22 @@
     border-bottom: 2px solid black;
     margin: 0 10px;
   }
-
-
-ul {
-  list-style-type: none;
-}
-
-a,
-a:hover {
-  text-decoration: none;
-}
-
+    ul {
+      list-style-type: none;
+    }
+    a,
+    a:hover {
+      text-decoration: none;
+    }
 
 /* Genel ayarlar */
 body .testimonial {
   padding: 80px 0;
-  background-color: #f9f9f9; /* Arka plan rengini daha hafif gri yaparak beyazı azaltabiliriz */
-  border: 2px solid #ddd; /* Arka plana border ekledik */
-  border-radius: 10px; /* Border için yuvarlatılmış köşeler */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Hafif gölge ekledik */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Hover efekti için geçiş süresi */
+  background-color: white; /* Arka plan rengini daha hafif gri yaparak beyazı azaltabiliriz */
+
 }
 
-body .testimonial:hover {
-  background-color: #fff; /* Hover sırasında arka plan rengini beyaz yap */
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Hover sırasında gölgeyi artır */
-}
+
 
 /* Carousel tabları (göstergeler) */
 body .testimonial .row .tabs {
@@ -207,17 +285,12 @@ body .testimonial .row .tabs {
 body .testimonial .row .tabs li {
   position: relative;
   margin-bottom: 20px;
-  border: 2px solid #ddd; /* Hafif bir border ekleyerek arka plana biraz derinlik katabiliriz */
-  border-radius: 50%;
   padding: 5px; /* Border için padding ekledik */
   background-color: #fff; /* İçerik kısmına beyaz arka plan */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge ekledik */
 }
 
-body .testimonial .row .tabs li img {
-  border-radius: 50%; /* Resimleri yuvarlak yap */
-  transition: transform 0.3s ease;
-}
+
 
 body .testimonial .row .tabs li figure:hover img {
   transform: scale(1.05);
@@ -351,7 +424,6 @@ body .testimonial .row .carousel .carousel-inner .carousel-item .quote-wrapper {
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  border: 2px solid #ddd; /* Quote wrapper için border ekledik */
 }
 
 body .testimonial .row .carousel .carousel-inner .carousel-item .quote-wrapper p {
@@ -379,8 +451,6 @@ body .testimonial .row .carousel .carousel-inner .carousel-item .quote-wrapper h
 
 
 /*üçüncü bölüm */
-
-
 body:before {
 
 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDRCNjE4NDcxMDgzMTFFMkFGQkM4MzE4NzI4RjhBMkQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDRCNjE4NDgxMDgzMTFFMkFGQkM4MzE4NzI4RjhBMkQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpENEI2MTg0NTEwODMxMUUyQUZCQzgzMTg3MjhGOEEyRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpENEI2MTg0NjEwODMxMUUyQUZCQzgzMTg3MjhGOEEyRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pp/mixwAABMrSURBVHjaNNrnrptV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);
@@ -839,39 +909,76 @@ h2 {
 
     </style>
     
-
   </head>
   <body>
-    <div id="hero">
-        <img id="foto" src="img/etüt11.jpg" class="d-block w-100" alt="...">
-    
-        <div class="content">
-            <div class="logo-navbar">
-                <div class="logo">
-                    <img src="img/yataylogo.png">
-                </div>
-                <div class="navbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="index.html">Ana Sayfa</a></li>
-                        <li class="nav-item"><a href="satranc.html">Satranç</a></li>
-                        <li class="nav-item"><a href="etüt.html">Etüt</a></li>
-                        <li class="nav-item"><a href="müzik.html">Müzik</a></li>
-                        <li class="nav-item"><a href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
-                        <li class="nav-item"><a href="resim.html">Resim</a></li>
-                        <li class="nav-item"><a href="ingilizce.html">İngilizce</a></li>
-                        <li class="nav-item"><a href="hızlıokuma.html">Hızlı Okuma</a></li>
-                        <li class="nav-item"><a href="basarilarimiz.html">Başarılarımız</a></li>
-                        <li style="background-color: red;padding: 8px 15px !important;" class="nav-item"><a href="iletişim.html">İletişim</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
+     <!-- Video and Navbar Section -->
+  <div id="hero">
+    <img id="foto" src="img/etüt11.jpg" class="d-block w-100" alt="...">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/yataylogo.png" alt="Logo">
+        </a>
+
+        <!-- Navbar toggler for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Navbar -->
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav desktop-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+            <li class="nav-item"><a class="nav-link" href="satranc.html">Satranç</a></li>
+            <li class="nav-item"><a class="nav-link" href="etüt.html">Etüt</a></li>
+            <li class="nav-item"><a class="nav-link" href="müzik.html">Müzik</a></li>
+            <li class="nav-item"><a class="nav-link" href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
+            <li class="nav-item"><a class="nav-link" href="resim.html">Resim</a></li>
+            <li class="nav-item"><a class="nav-link" href="ingilizce.html">İngilizce</a></li>
+            <li class="nav-item"><a class="nav-link" href="hızlıokuma.html">Hızlı Okuma</a></li>
+            <li class="nav-item"><a class="nav-link" href="basarilarimiz.html">Başarılarımız</a></li>
+            <li class="nav-item"><a class="nav-link " href="iletişim.html">İletişim</a></li>
+          </ul>
+        </div>
+
+        <!-- Offcanvas Navbar for mobile -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="deneme.html">Ana Sayfa</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="satranc.html">Satranç</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="etüt.html">Etüt</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="müzik.html">Müzik</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="resim.html">Resim</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="ingilizce.html">İngilizce</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="hızlıokuma.html">Hızlı Okuma</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="basarilarimiz.html">Başarılarımız</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link btn btn-danger" href="iletişim.html">İletişim</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+      <h1><span>DİNAMİK KİŞİSEL EĞİTİM MERKEZİ</span></h1>
+      <p>"Potansiyelinizi Keşfedin, Hayatınızı Dönüştürün!"</p>
+      <a href="iletişim.html" class="btn btn-danger">Hemen Başla</a>
+    </div>
+  </div>
+ <!--navbar bitti-->
 
    <!--PROGRAMLAR-->
 <h1 class="section-title">PROGRAMLAR</h1>
-
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
@@ -913,7 +1020,7 @@ h2 {
     </div>
 </div>
 
-  
+  <!--başarıya giden yolda rehberlik-->
 
 <div class="shape"> 
   <div class="shape-before"></div>
@@ -928,19 +1035,19 @@ h2 {
             <div class="col-lg-6 d-none d-lg-block">
                 <ol class="carousel-indicators tabs">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" >
-                        <figure>
-                            <img src="img/logo11.jpg" class="img-fluid" alt="">
-                        </figure>
+                      
+                            <img src="img/be1 (2).png" class="img-fluid" alt="">
+                       
                     </li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1">
-                        <figure>
-                            <img src="img/logo4.jpg" class="img-fluid" alt="">
-                        </figure>
+                        
+                            <img src="img/be3.png" class="img-fluid" alt="">
+                        
                     </li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2">
-                        <figure>
-                            <img src="img/logo12.jpg" class="img-fluid" alt="">
-                        </figure>
+                        
+                            <img src="img/be2.png" class="img-fluid" alt="">
+                        
                     </li>
                 </ol>
             </div>
@@ -977,54 +1084,7 @@ h2 {
 </section>
 
 
-<!--3. bölüm-->
 
-
-<section class="demo">
-
-  <dl class="list nigiri">
-      <dt>DİNAMİK</dt>
-      <dd><a href="#">MATEMATİK</a></dd>
-      <dd><a href="#">FEN BİLİMLERİ</a></dd>
-      <dd><a href="#">TÜRKÇE</a></dd>
-      <dd><a href="#">SOSYAL BİLGİLER</a></dd>
-      <dd><a href="#">TARİH</a></dd>
-      <dd><a href="#">İNGİLİZCE</a></dd>
-  </dl>
-
-  <dl class="list maki">
-      <dt>KİŞİSEL</dt>
-      <dd><a href="#">DENEME SINAVLARI</a></dd>
-      <dd><a href="#">KİŞİYE ÖZEL PROGRAM</a></dd>
-      <dd><a href="#">REHBERLİK HİZMETİ</a></dd>
-      <dd><a href="#">BAŞARI PLANLAMASI</a></dd>
-      <dd><a href="#">ÖZEL DERS İMKANI</a></dd>
-      <dd><a href="#">BİREYSEL EĞİTİM PLANLARI</a></dd>
-  </dl>
-
-  <dl class="list sashimi">
-      <dt>EĞİTİM MERKEZİ</dt>
-      <dd><a href="#">AKADEMİK DESTEK PROGRAMLARI</a></dd>
-      <dd><a href="#">BİREYSEL ÖĞRENME DENİZİ</a></dd>
-      <dd><a href="#">ÖZEL EĞİTİM FIRSATLARI</a></dd>
-      <dd><a href="#">YOLUNUZU AYDINLATAN REHBERLİK</a></dd>
-      <dd><a href="#">AKADEMİK YOLCULUĞUNUZDA REHBERLİK</a></dd>
-      <dd><a href="#">EĞİTİMDE BİREYSEL YAKLAŞIM</a></dd>
-     
-  </dl>
-
-  <a href="#" class="toggle"><svg style="margin-top: -24px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
-  </svg></a>
-
-</section>
-
-<div class="warning">
-  <div class="message">
-      <h1>CSS 3D Not Detected :(</h1>
-      <p>I couldn't detect your browser's CSS 3D capabilities. If I'm wrong, please <a href="https://github.com/soulwire/Makisu/issues" target="_blank">file an issue</a>, otherwise, try a <a href="http://www.google.com/chrome" target="_blank">sexier browser</a></p>
-  </div>
-</div>
 
 <div class="shape"> 
   <div class="shape-before"></div>
