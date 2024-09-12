@@ -15,113 +15,154 @@
             padding: 0; 
             overflow-x: hidden;
         }
+/*navbar başlangıçıç */
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 0;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-start; /* Sola hizalamak için */
+      align-items: center;
+    }
 
-        #hero {
-            position: relative;
-            height: 100vh;
-            z-index: 30;
-        }
+    .navbar-brand img {
+      height: 70px;
+    }
+    .navbar-brand {
+      margin-right: 20px; /* Logo ve menü arasında boşluk bırak */
+    }
+    .desktop-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 0; /* Solda hizalanması için 0 yapıyoruz */
+    }
+    .desktop-nav .nav-item {
+      margin: 0 5px;
+    }
+    /*masaüstü navbar */
+    .desktop-nav .nav-link {
+    font-weight: bold;
+    white-space: nowrap;
+    background: linear-gradient(45deg, #a2c2e1, #d0e3f0);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 5s infinite;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+    .desktop-nav .nav-link:hover {
+      color: red;
+    }
+  /*masaütü navbar bitişi */
+  /* mobil navbar */
+    .offcanvas {
+      background-color: #343a40;
+      color: white;
+      width: 250px;
+    }
+    .offcanvas-header {
+      border-bottom: 1px solid #495057;
+    }
+    .offcanvas-body {
+      padding: 0;
+    }
+    .offcanvas-body .offcanvas-nav-item {
+      margin-bottom: 0;
+    }
+    .offcanvas-body .offcanvas-nav-link {
+      color: white;
+      font-weight: bold;
+      padding: 15px 20px;
+      border-bottom: 1px solid #495057;
+      display: block; /* Offcanvas menüde alt alta gelsin */
+    }
+    .offcanvas-body .offcanvas-nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: red;
+    }
+    .offcanvas-body .offcanvas-nav-item:last-child .offcanvas-nav-link {
+      border-bottom: none;
+    }
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none; /* Mobilde normal navbar gizlenir */
+      }
+      .navbar-toggler {
+        display: block; /* Navbar toggler sadece mobilde görünür */
+      }
+      .offcanvas {
+        display: block; /* Offcanvas sadece mobilde görünür */
+      }
+    }
+    @media (min-width: 769px) {
+      .navbar-toggler {
+        display: none; /* Toggler düğmesi sadece mobilde görünür */
+      }
+      .offcanvas {
+        display: none; /* Offcanvas menü masaüstü görünümde gizlenir */
+      }
+    }
+    /*navbar bitiş */
 
-        #foto {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
+     
+    /*bölüm2 */
+    /* Mobil uyumluluk için medya sorguları */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 
-        #hero .content {
-            background: rgba(0, 0, 0, 0.5);
-            height: 100%;
-            width: 100%;
-            z-index: 20;
-            position: absolute;
-            top: 0;
-            left: 0;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
+  figure.snip1113 {
+    margin: 10px 0; /* Üst ve alt marginleri ayarlayarak aralarındaki boşluğu artırır */
+  }
+}
 
-        #hero .content h1,
-        #hero .content p {
-            color: #FFF;
-            font-family: Arial, sans-serif;
-        }
+@media (max-width: 480px) {
+  figure.snip1113 h3 {
+    font-size: 1.2em; /* Küçük ekranlarda yazı boyutunu daha da küçültür */
+  }
 
-        #hero .logo-navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: calc(100% - 40px);
-        }
+  figure.snip1113 h4 {
+    font-size: 0.9em; /* Küçük ekranlarda yazı boyutunu küçültür */
+  }
+}
 
-        #hero .logo-navbar img {
-            width: 300px;
-        }
+#inner-content {
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  height: auto; /* İçeriği sığdıracak şekilde yüksekliği otomatik ayarlama */
+}
 
-        #hero .logo-navbar ul.navbar-nav {
-            list-style-type: none;
-            display: inline;
-            margin: 0;
-            padding: 0;
-        }
+#inner-content h5 {
+  font-size: 24px; /* Daha küçük ekranlarda font boyutunu küçültür */
+  margin-bottom: 10px;
+}
 
-        #hero .logo-navbar ul.navbar-nav li.nav-item {
-            margin-right: 20px;
-            display: inline-block;
-        }
+#inner-content h4 {
+  font-size: 28px; /* Daha küçük ekranlarda font boyutunu küçültür */
+  font-weight: 800;
+}
 
-        #hero .logo-navbar ul.navbar-nav li.nav-item a {
-            color: #FFF;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .carousel-caption{
-            margin-left: -190px;
-            width: 100%;
-            margin-top: 100px;
-        }
-
-        h2 {
-            font-size: 60px;
-            color:rgb(172, 214, 209);
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        p {
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-        .btn-transparent {
-            background: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-        }
-
-        .btn-transparent:hover {
-            background-color: rgb(172, 214, 209);
-        }
-
-        .btn-rounded {
-            border-radius: 70px;
-        }
-
-        .btn-large {
-            padding: 11px 45px;
-            font-size: 18px;
-        }
-
-        /*bölüm2 */
+#inner-content p {
+  font-size: 16px; /* Daha küçük ekranlarda font boyutunu küçültür */
+  line-height: 1.6;
+}
         @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
         figure.snip1113 {
           font-family: 'Raleway', Arial, sans-serif;
@@ -247,8 +288,7 @@
           justify-content: space-between;
         }
 
-        /* Yukarıdaki CSS kodu ile aynı kalmak kaydıyla diğer CSS kodlarını da ekleyebilirsiniz */
-        /* Böylece stilleri bir dosyada toplamış olursunuz */
+     
         .snip1113 img {
           max-width: 100%;
           margin: 40px auto;
@@ -489,33 +529,88 @@ html {
     color: #fff;
 }
 
+/*footer*/
+.bi-facebook {
+    color: #1877F2; /* Facebook Blue */
+}
+
+.bi-whatsapp {
+    color: #25D366; /* WhatsApp Green */
+}
+
+.bi-instagram {
+    /* Instagram Pink for the fill color */
+    color: #E4405F;
+    
+    /* Background gradient for the Instagram icon */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    
+    /* Apply text gradient with clipping */
+    -webkit-background-clip: text; /* For Safari and older Chrome */
+    background-clip: text;         /* Standard property */
+    
+    /* Use text fill color to ensure the text is transparent */
+    -webkit-text-fill-color: transparent; /* For Safari and Chrome */
+}
+
     </style>
   </head>
   <body>
-    <div id="hero">
-        <img id="foto" src="img/piyano3.jpg" alt="Yazılım ve Robotik Kodlama" />
-        <div class="content">
-            <div class="logo-navbar">
-                <div class="logo">
-                    <img src="img/yataylogo.png" alt="Logo">
-                </div>
-                <div class="navbar">
-                    <ul class="navbar-nav hero-list">
-                        <li class="nav-item"><a href="banner.html">Ana Sayfa</a></li>
-                        <li class="nav-item"><a href="satranc.html">Satranç</a></li>
-                        <li class="nav-item"><a href="etüt.html">Etüt</a></li>
-                        <li class="nav-item"><a href="müzik.html">Müzik</a></li>
-                        <li class="nav-item"><a href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
-                        <li class="nav-item"><a href="resim.html">Resim</a></li>
-                        <li class="nav-item"><a href="ingilizce.html">İngilizce</a></li>
-                        <li class="nav-item"><a href="hızlıokuma.html">Hızlı Okuma</a></li>
-                        <li class="nav-item"><a href="basarilarimiz.html">Başarılarımız</a></li>
-                        <li style="background-color: red;padding: 8px 15px !important;" class="nav-item"><a href="#">İletişim</a></li>
-                    </ul>
-                </div>
-            </div>
+    <!--navbar-->
+      <!-- Video and Navbar Section -->
+  <div id="hero">
+    <img id="foto" src="img/piyano3.jpg" class="d-block w-100" alt="...">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/yataylogo.png" alt="Logo">
+        </a>
+
+        <!-- Navbar toggler for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Navbar -->
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav desktop-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+            <li class="nav-item"><a class="nav-link" href="satranc.html">Satranç</a></li>
+            <li class="nav-item"><a class="nav-link" href="etüt.html">Etüt</a></li>
+            <li class="nav-item"><a class="nav-link" href="müzik.html">Müzik</a></li>
+            <li class="nav-item"><a class="nav-link" href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
+            <li class="nav-item"><a class="nav-link" href="resim.html">Resim</a></li>
+            <li class="nav-item"><a class="nav-link" href="ingilizce.html">İngilizce</a></li>
+            <li class="nav-item"><a class="nav-link" href="hızlıokuma.html">Hızlı Okuma</a></li>
+            <li class="nav-item"><a class="nav-link" href="basarilarimiz.html">Başarılarımız</a></li>
+            <li class="nav-item"><a class="nav-link " href="iletişim.html">İletişim</a></li>
+          </ul>
         </div>
-    </div>
+
+        <!-- Offcanvas Navbar for mobile -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="deneme.html">Ana Sayfa</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="satranc.html">Satranç</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="etüt.html">Etüt</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="müzik.html">Müzik</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="resim.html">Resim</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="ingilizce.html">İngilizce</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="hızlıokuma.html">Hızlı Okuma</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="basarilarimiz.html">Başarılarımız</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link btn btn-danger" href="iletişim.html">İletişim</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <!--bölüm2-->
     <div class="container">
