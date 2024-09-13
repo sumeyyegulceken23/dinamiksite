@@ -15,328 +15,211 @@ body {
     padding: 0;
 }
 
-/* Hero bölümü */
+/*navbar başlangıç*/
+/*navbar başlangıç */
 #hero {
-    position: relative;
-    height: 100vh; /* Ekranın tamamını kaplaması için viewport yüksekliği */
-}
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-#foto1 {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    #hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
 
-#hero .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: #FFF;
-    font-family: Arial, sans-serif;
-}
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 0;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-start; /* Sola hizalamak için */
+      align-items: center;
+    }
 
-#hero .logo-navbar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: calc(100% - 40px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    .navbar-brand img {
+      height: 70px;
+    }
 
-#hero .logo-navbar img {
-    width: 300px;
-}
+    .navbar-brand {
+      margin-right: 20px; /* Logo ve menü arasında boşluk bırak */
+    }
 
-#hero .logo-navbar ul.navbar-nav {
-    list-style-type: none;
-    display: inline;
-    margin: 0;
-    padding: 0;
-}
+    .desktop-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 0; /* Solda hizalanması için 0 yapıyoruz */
+    }
 
-#hero .logo-navbar ul.navbar-nav li.nav-item {
-    margin-right: 20px;
-    display: inline-block;
-}
+    .desktop-nav .nav-item {
+      margin: 0 5px;
+      
+    }
+    /*masaüstü navbar */
+    .desktop-nav .nav-link {
+    font-weight: bold;
+    white-space: nowrap;
+    background: linear-gradient(45deg, #a2c2e1, #d0e3f0);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 5s infinite;
+  }
 
-#hero .logo-navbar ul.navbar-nav li.nav-item a {
-    color: #FFF;
-    text-decoration: none;
-}
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
-/* Carousel caption */
-.carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    margin-left: -0px;
-    margin-top: 70px;
-}
+    .desktop-nav .nav-link:hover {
+      color: red;
+    }
 
-h2 {
-    font-size: 60px;
-    color:rgb(172, 214, 209);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+    .content {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 1;
+      padding: 20px;
+      overflow: hidden; /* İçeriğin taşmasını engelle */
+    }
 
-p {
-    padding: 10px;
-    margin-bottom: 20px;
-}
+      .content h1 span {
+    color: #ff0000; /* Kırmızı renk */
+    font-size: 3rem; /* Daha büyük boyut */
+    font-weight: bold; /* Kalın yazı */
+    text-transform: uppercase; /* Büyük harflerle yazı */
+    letter-spacing: 2px; /* Harfler arasındaki boşluk */
+    animation: glowText 1.5s ease-in-out infinite alternate; /* Parlama animasyonu */
+  }
 
-.btn-transparent {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-}
+    @keyframes glowText {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+      }
+      100% {
+        text-shadow: 0 0 20px rgba(255, 255, 0, 1), 0 0 30px rgba(255, 255, 0, 1);
+      }
+    }
 
-.btn-transparent:hover {
-    background-color: rgb(172, 214, 209);
-}
+    .content p {
+    color: rgb(32, 2, 0);
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem; /* Biraz daha büyük yazı */
+    text-shadow: 0 0 10px rgba(219, 158, 127, 0.8); /* Parlama efekti */
+    margin-top: 20px; /* Başlıkla biraz boşluk */
+    
+  }
 
-.btn-rounded {
-    border-radius: 70px;
-}
+    @keyframes textBlink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
-.btn-large {
-    padding: 11px 45px;
-    font-size: 18px;
-}
+    .content a {
+    color: white;
+    background-color: #ff4c4c;
+    padding: 10px 30px;
+    font-size: 1.2rem; /* Butonu biraz büyütme */
+    border-radius: 50px; /* Yuvarlatılmış kenarlar */
+    text-transform: uppercase;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animasyonlu hover efekti */
+  }
+  /*masaütü navbar bitişi */
+
+    /* Offcanvas Styles */
+    .offcanvas {
+      background-color: #343a40;
+      color: white;
+      width: 250px;
+    }
+
+    .offcanvas-header {
+      border-bottom: 1px solid #495057;
+    }
+
+    .offcanvas-body {
+      padding: 0;
+    }
+
+    .offcanvas-body .offcanvas-nav-item {
+      margin-bottom: 0;
+    }
+
+    .offcanvas-body .offcanvas-nav-link {
+      color: white;
+      font-weight: bold;
+      padding: 15px 20px;
+      border-bottom: 1px solid #495057;
+      display: block; /* Offcanvas menüde alt alta gelsin */
+    }
+
+    .offcanvas-body .offcanvas-nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: red;
+    }
+
+    .offcanvas-body .offcanvas-nav-item:last-child .offcanvas-nav-link {
+      border-bottom: none;
+    }
+
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none; /* Mobilde normal navbar gizlenir */
+      }
+      .navbar-toggler {
+        display: block; /* Navbar toggler sadece mobilde görünür */
+      }
+      .offcanvas {
+        display: block; /* Offcanvas sadece mobilde görünür */
+      }
+    }
+
+    @media (min-width: 769px) {
+      .navbar-toggler {
+        display: none; /* Toggler düğmesi sadece mobilde görünür */
+      }
+      .offcanvas {
+        display: none; /* Offcanvas menü masaüstü görünümde gizlenir */
+      }
+    }
+    /*navbar bitiş */
+
 
 /* bölüm2 */
-
-.container
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 40px 0;
-}
-
-.container .box
-{
-  position: relative;
-  width: 320px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 30px;
-  transition: 0.5s;
-}
-
-.container .box::before
-{
-  content:' ';
-  position: absolute;
-  top: 0;
-  left: 50px;
-  width: 50%;
-  height: 100%;
-  text-decoration: none;
-  background: #9c4747;
-  border-radius: 8px;
-  transform: skewX(15deg);
-  transition: 0.5s;
-}
-
-.container .box::after
-{
-  content:'';
-  position: absolute;
-  top: 0;
-  left: 50;
-  width: 50%;
-  height: 100%;
-  background: #fff;
-  border-radius: 8px;
-  transform: skewX(15deg);
-  transition: 0.5s;
-  filter: blur(30px);
-}
-
-.container .box:hover:before,
-.container .box:hover:after
-{
-  transform: skewX(0deg);
-  left: 20px;
-  width: calc(100% - 90px);
-  
-}
-
-.container .box:nth-child(1):before,
-.container .box:nth-child(1):after
-{
-  background: linear-gradient(315deg, #ffbc00, #ff0058)
-}
-
-.container .box:nth-child(2):before,
-.container .box:nth-child(2):after
-{
-  background: linear-gradient(315deg, #03a9f4, #ff0058)
-}
-
-.container .box:nth-child(3):before,
-.container .box:nth-child(3):after
-{
-  background: linear-gradient(315deg, #4dff03, #00d0ff)
-}
-
-.container .box span
-{
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 5;
-  pointer-events: none;
-}
-
-.container .box span::before
-{
-  content:'';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: 0.1s;  
-  animation: animate 2s ease-in-out infinite;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08)
-}
-
-.container .box:hover span::before
-{
-  top: -50px;
-  left: 50px;
-  width: 100px;
-  height: 100px;
-  opacity: 1;
-}
-
-.container .box span::after
-{
-  content:'';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: 0.5s;
-  animation: animate 2s ease-in-out infinite;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  animation-delay: -1s;
-}
-
-.container .box:hover span:after
-{
-  bottom: -50px;
-  right: 50px;
-  width: 100px;
-  height: 100px;
-  opacity: 1;
-}
-
-@keyframes animate
-{
-  0%, 100%
-  {
-    transform: translateY(10px);
-  }
-  
-  50%
-  {
-    transform: translate(-10px);
-  }
-}
-
-.container .box .content
-{
-  position: relative;
-  left: 0;
-  padding: 20px 40px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  z-index: 1;
-  transform: 0.5s;
-  color: #501717;
-}
-
-.container .box:hover .content
-{
-  left: -25px;
-  padding: 60px 40px;
-}
-
-.container .box .content h2
-{
-  font-size: 2em;
-  color: #281d6b;
-  margin-bottom: 10px;
-}
-
-.container .box .content p
-{
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  line-height: 1.4em;
-}
-
-.container .box .content a
-{
-  display: inline-block;
-  font-size: 1.1em;
-  color: #111;
-  background: #fff;
-  padding: 10px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 700;
-  margin-top: 5px;
-  margin-left: 50px;
-}
-
-.container .box .content a:hover
-{
-  background: #ffcf4d;
-  border: 1px solid rgba(255, 0, 88, 0.4);
-  box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
-  
-}
-
-
 .main-timeline {
-    background: linear-gradient(135deg, #f0f4f8, #e3e8f0); /* Hafif degrade arka plan */
     font-family: 'Poppins', sans-serif;
     padding: 50px 0;
     width: 100%;
     box-sizing: border-box;
     border-radius: 20px;
-    border: 2px solid #d3d3d3;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
     transition: all 0.3s ease-in-out; /* Geçiş efekti */
 }
@@ -568,70 +451,75 @@ h1 {
     </style>
   </head>
   <body>
-       <div id="hero">
-        <img id="foto1" src="img/resimm_01.jpg" class="d-block w-100" alt="...">
-    
-        <div class="content">
-            <div class="logo-navbar">
-                <div class="logo">
-                    <img src="img/yataylogo.png">
-                </div>
-                <div class="navbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="banner.html">Ana Sayfa</a></li>
-                        <li class="nav-item"><a href="satranc.html">Satranç</a></li>
-                        <li class="nav-item"><a href="etüt.html">Etüt</a></li>
-                        <li class="nav-item"><a href="müzik.html">Müzik</a></li>
-                        <li class="nav-item"><a href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
-                        <li class="nav-item"><a href="resim.html">Resim</a></li>
-                        <li class="nav-item"><a href="ingilizce.html">İngilizce</a></li>
-                        <li class="nav-item"><a href="hızlıokuma.html">Hızlı Okuma</a></li>
-                        <li class="nav-item"><a href="basarilarimiz.html">Başarılarımız</a></li>
-                        <li style="background-color: red;padding: 8px 15px !important;" class="nav-item"><a href="iletişim.html">İletişim</a></li>
-                    </ul>
-                </div>
-            </div>
+  <!--navbar başlangıç-->
+     <!-- Video and Navbar Section -->
+  <div id="hero">
+    <video autoplay loop muted>
+      <source src="resim.mp4" type="video/mp4">
+    </video>
 
-            <div class="carousel-caption">
-                <h2 class="animated fadeInLeft">Resim Dersleri</h2>
-                <p class="animated fadeInUp"> Yaratıcılığınızı Resim Dersleriyle Keşfedin</p>
-                <a href="#" class="btn btn-transparent btn-rounded btn-large">DETAYLI BİLGİ </a>
-            </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="img/yataylogo.png" alt="Logo">
+        </a>
+
+        <!-- Navbar toggler for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Navbar -->
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav desktop-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+            <li class="nav-item"><a class="nav-link" href="satranc.html">Satranç</a></li>
+            <li class="nav-item"><a class="nav-link" href="etüt.html">Etüt</a></li>
+            <li class="nav-item"><a class="nav-link" href="müzik.html">Müzik</a></li>
+            <li class="nav-item"><a class="nav-link" href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
+            <li class="nav-item"><a class="nav-link" href="resim.html">Resim</a></li>
+            <li class="nav-item"><a class="nav-link" href="ingilizce.html">İngilizce</a></li>
+            <li class="nav-item"><a class="nav-link" href="hızlıokuma.html">Hızlı Okuma</a></li>
+            <li class="nav-item"><a class="nav-link" href="basarilarimiz.html">Başarılarımız</a></li>
+            <li class="nav-item"><a class="nav-link " href="iletişim.html">İletişim</a></li>
+          </ul>
         </div>
-    </div>
-    
 
+        <!-- Offcanvas Navbar for mobile -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="deneme.html">Ana Sayfa</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="satranc.html">Satranç</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="etüt.html">Etüt</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="müzik.html">Müzik</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="yazılım.html">Yazılım Ve Robotik Kodlama</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="resim.html">Resim</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="ingilizce.html">İngilizce</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="hızlıokuma.html">Hızlı Okuma</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="basarilarimiz.html">Başarılarımız</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link btn btn-danger" href="iletişim.html">İletişim</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-<!--bölüm2-->
-<div class="container">
-    <div class="box">
-      <span></span>
-      <div class="content">
-        <h2> Yaratıcılığınızı Resim Dersleriyle Keşfedin</h2>
-        <p>Sanat, duyguların ve düşüncelerin ifadesi için bir araç olarak insanlık tarihinde var olmuştur. Resim dersleri, öğrencilere bu sanatın büyülü dünyasını keşfetme ve kendi yaratıcı potansiyellerini açığa çıkarma fırsatı sunar.</p>
-        <a href="iletişim.html">Detaylı Bilgi</a>
-      </div>
-    </div>
-    <div class="box">
-      <span></span>
-      <div class="content">
-        <h2> Resim Dersleriyle Yaratıcılığınızı Renklendirin</h2>
-        <p>Resim dersleri, öğrencilere sanatın inceliklerini keşfetme ve kendi yaratıcı potansiyellerini ortaya çıkarma fırsatı sunar. Farklı renk paletleri ve teknikler kullanarak, düşüncelerini tuval üzerine aktarmanın keyfini yaşarlar.</p>
-        <a href="iletişim.html">Detaylı Bilgi</a>
-      </div>
-    </div>
-    <div class="box">
-      <span></span>
-      <div class="content">
-        <h2>Tuvalin Büyülü Dünyasında Yolculuk</h2>
-        <p>Tuvalin üzerine yansıttıklarıyla kendi iç dünyalarını keşfeden öğrenciler, renklerin ve formların büyülü dünyasına adım atarlar. Farklı resim teknikleri ve tarzlarıyla deneyimler yaparak, öğrencilerin sanat anlayışı ve becerileri giderek gelişir.</p>
-        <a href="iletişim.html">Detaylı Bilgi</a>
-      </div>
+    <!-- Content -->
+    <div class="content">
+      <h1><span>SANATIN RENKLİ DÜNYASI</span></h1>
+      <p>"Çocuklar İçin Resim Dersi"</p>
+      <a href="iletişim.html" class="btn btn-danger">Hemen Başla</a>
     </div>
   </div>
-    
+ <!--navbar bitti-->
 
- <!-- Bölüm 3 -->
+ <!-- Bölüm 2 -->
 <div class="container">
   <div class="row">
       <div class="col-md-12">
