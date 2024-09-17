@@ -578,6 +578,26 @@ html {
 .fa-ul {
         list-style-type: none; /* Noktaları kaldırır */
 }
+.whatsapp-button {
+        position: fixed; /* Sabit konum */
+        bottom: 20px; /* Sayfanın altından 20px yukarıda */
+        right: 20px; /* Sayfanın sağından 20px uzakta */
+        background-color: #25D366; /* WhatsApp yeşili */
+        border-radius: 50%; /* Yuvarlak buton */
+        padding: 10px; /* İç boşluk */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+        z-index: 1000; /* Üstte görünür */
+        transition: background-color 0.3s; /* Hover geçiş efekti */
+    }
+
+    .whatsapp-button img {
+        width: 50px; /* İkonun genişliği */
+        height: 50px; /* İkonun yüksekliği */
+    }
+
+    .whatsapp-button:hover {
+        background-color: #128C7E; /* Hover durumunda daha koyu yeşil */
+    }
     </style>
   </head>
   <body>
@@ -716,6 +736,11 @@ html {
       </video>
   </div>
 </div>
+
+<!-- WhatsApp Butonu -->
+<a href="https://wa.me/90555458478" target="_blank" class="whatsapp-button">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
 
 
     <!--Footer-->
