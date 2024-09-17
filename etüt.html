@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <title>Etüt</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <style>
@@ -51,6 +52,67 @@
     .desktop-nav .nav-item {
       margin: 0 5px;     
     }
+     .content {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 1;
+      padding: 20px;
+      overflow: hidden; /* İçeriğin taşmasını engelle */
+    }
+
+      .content h1 span {
+    color: #ff0000; /* Kırmızı renk */
+    font-size: 3rem; /* Daha büyük boyut */
+    font-weight: bold; /* Kalın yazı */
+    text-transform: uppercase; /* Büyük harflerle yazı */
+    letter-spacing: 2px; /* Harfler arasındaki boşluk */
+    animation: glowText 1.5s ease-in-out infinite alternate; /* Parlama animasyonu */
+  }
+
+    @keyframes glowText {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+      }
+      100% {
+        text-shadow: 0 0 20px rgba(255, 255, 0, 1), 0 0 30px rgba(255, 255, 0, 1);
+      }
+    }
+
+    .content p {
+    color: rgb(32, 2, 0);
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem; /* Biraz daha büyük yazı */
+    text-shadow: 0 0 10px rgba(219, 158, 127, 0.8); /* Parlama efekti */
+    margin-top: 20px; /* Başlıkla biraz boşluk */
+    
+  }
+
+    @keyframes textBlink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+    .content a {
+    color: white;
+    background-color: #ff4c4c;
+    padding: 10px 30px;
+    font-size: 1.2rem; /* Butonu biraz büyütme */
+    border-radius: 50px; /* Yuvarlatılmış kenarlar */
+    text-transform: uppercase;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animasyonlu hover efekti */
+  }
     /*masaüstü navbar */
     .desktop-nav .nav-link {
     font-weight: bold;
@@ -96,6 +158,7 @@
       padding: 15px 20px;
       border-bottom: 1px solid #495057;
       display: block; /* Offcanvas menüde alt alta gelsin */
+      text-decoration: none;
     }
     .offcanvas-body .offcanvas-nav-link:hover {
       background-color: rgba(255, 255, 255, 0.1);
@@ -114,6 +177,10 @@
       .offcanvas {
         display: block; /* Offcanvas sadece mobilde görünür */
       }
+      #foto {
+    width: 100%; /* Fotoğraf genişliği mobilde ekran genişliğine göre ayarlanır */
+    height: auto; /* Fotoğraf yüksekliği oranına göre otomatik ayarlanır */
+  }
     }
     @media (min-width: 769px) {
       .navbar-toggler {
@@ -954,6 +1021,28 @@ h2 {
     .whatsapp-button:hover {
         background-color: #128C7E; /* Hover durumunda daha koyu yeşil */
     }
+     /*telefon */
+  .navbar .phone-contact {
+  padding: 0.5rem 1rem; /* Arka planın iç paddingi */
+}
+
+.navbar .bi-telephone {
+  font-size: 1.5rem; /* İkonun boyutunu ayarlayın */
+  color: red; /* İkon rengini ayarlayın */
+}
+
+.navbar .phone-contact a {
+  color: white; /* Telefon numarasının rengini ayarlayın */
+  font-size: 1rem; /* Telefon numarasının boyutunu ayarlayın */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar .phone-contact a:hover {
+  color: white; /* Numara üzerinde hover efekti */
+}
     </style>
   </head>
   <body>
@@ -986,6 +1075,12 @@ h2 {
             <li class="nav-item"><a class="nav-link" href="hızlıokuma.html">Hızlı Okuma</a></li>
             <li class="nav-item"><a class="nav-link" href="basarilarimiz.html">Başarılarımız</a></li>
             <li class="nav-item"><a class="nav-link " href="iletişim.html">İletişim</a></li>
+            <div class="d-flex align-items-center ms-3 phone-contact">
+              <a href="tel:+1234567890" class="text-decoration-none d-flex align-items-center">
+                <i class="bi bi-telephone"></i>
+                <span class="ms-2">0(555) 4555 1447</span> 
+              </a>
+            </div>
           </ul>
         </div>
 
@@ -1033,8 +1128,8 @@ h2 {
                     <h5 class="card-title">4,5,6. SINIF ETÜT</h5>
                     <p class="card-text">Bireysel öğrenme ihtiyaçlarına odaklanır, akademik destek sağlar, etkileşimli öğrenme ortamı sunar.</p>
                 </div>
-                <div class="card-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></svg>
+                <div style="margin-top: 5px;" class="card-icon">
+                    <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></svg>
                 </div>
             </div>
         </div>
@@ -1045,7 +1140,7 @@ h2 {
                     <h5 class="card-title">BUTİK EĞİTİM</h5>
                     <p class="card-text">Öğrencilere kişiselleştirilmiş öğrenme deneyimi sunar, bireysel dikkat ve etkileşimi artırır.</p>
                 </div>
-                <div class="card-icon">
+                <div style="margin-top: 5px;" class="card-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z"/></svg>
                 </div>
             </div>
@@ -1057,7 +1152,7 @@ h2 {
                     <h5 class="card-title">DÜZENLİ DENEME SINAVLARI</h5>
                     <p class="card-text">Öğrencilerin sınav stratejilerini geliştirir, eksikliklerini belirler ve performanslarını artırır.</p>
                 </div>
-                <div class="card-icon">
+                <div style="margin-top: 5px;"class="card-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
                 </div>
             </div>
