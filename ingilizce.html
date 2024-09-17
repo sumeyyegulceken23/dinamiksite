@@ -74,6 +74,10 @@
     color: transparent;
     animation: gradient 5s infinite;
   }
+  .content.hidden {
+  display: none;
+}
+
 
 
   /*masaütü navbar bitişi */
@@ -673,6 +677,23 @@ ul {
             </div>
           </footer>
 
+          <!--offancas navbar da content kaybolması-->
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              var offcanvasNavbar = document.getElementById('offcanvasNavbar');
+              var content = document.querySelector('.content');
+          
+              // Offcanvas açıldığında içerik gizlensin
+              offcanvasNavbar.addEventListener('show.bs.offcanvas', function () {
+                content.style.display = 'none';
+              });
+          
+              // Offcanvas kapandığında içerik tekrar gösterilsin
+              offcanvasNavbar.addEventListener('hidden.bs.offcanvas', function () {
+                content.style.display = 'block';
+              });
+            });
+          </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
