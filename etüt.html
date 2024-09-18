@@ -17,14 +17,17 @@
 
   /*navbar başlangıç */
       #foto {
-          height: 100vh; /* Cover the entire viewport height */
-          width: auto; /* Maintain aspect ratio */
-      }
-      #hero {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-          }
+        height: 100vh;
+        width: 100%; 
+        object-fit: cover; /* Fotoğrafın orantılı şekilde ekranı kaplamasını sağlar */
+        z-index: 0; /* Fotoğraf en arkada olacak */
+    }
+    #hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1; /* Hero bölümü içeriğin daha ön planda olması için */
+}
     .navbar {
       position: absolute;
       top: 0;
@@ -52,17 +55,17 @@
     .desktop-nav .nav-item {
       margin: 0 5px;     
     }
-     .content {
-      position: relative;
+      .content {
+      position: absolute; /* 'relative' yerine 'absolute' yapıyoruz ki üstte sabit kalsın */
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
       color: white;
-      z-index: 1;
+      z-index: 2; /* İçerik en önde olacak */
       padding: 20px;
-      overflow: hidden; /* İçeriğin taşmasını engelle */
-    }
+      overflow: hidden;
+  }
 
       .content h1 span {
     color: #ff0000; /* Kırmızı renk */
@@ -112,7 +115,10 @@
     border-radius: 50px; /* Yuvarlatılmış kenarlar */
     text-transform: uppercase;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animasyonlu hover efekti */
+  
   }
+
+  
     /*masaüstü navbar */
     .desktop-nav .nav-link {
     font-weight: bold;
@@ -177,10 +183,7 @@
       .offcanvas {
         display: block; /* Offcanvas sadece mobilde görünür */
       }
-      #foto {
-    width: 100%; /* Fotoğraf genişliği mobilde ekran genişliğine göre ayarlanır */
-    height: auto; /* Fotoğraf yüksekliği oranına göre otomatik ayarlanır */
-  }
+   
     }
     @media (min-width: 769px) {
       .navbar-toggler {
@@ -1092,7 +1095,7 @@ h2 {
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav">
-              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="deneme.html">Ana Sayfa</a></li>
+              <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="index.html">Ana Sayfa</a></li>
               <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="satranc.html">Satranç</a></li>
               <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="etüt.html">Etüt</a></li>
               <li class="offcanvas-nav-item"><a class="offcanvas-nav-link" href="müzik.html">Müzik</a></li>
@@ -1562,6 +1565,21 @@ $(document).ready(function(){
     });
 });
     </script>
+
+<script>
+  // Offcanvas açıldığında sadece content'i gizle
+  document.getElementById('offcanvasNavbar').addEventListener('show.bs.offcanvas', function () {
+    document.querySelector('.content').style.display = 'none';
+  });
+
+  // Offcanvas kapandığında content'i tekrar göster
+  document.getElementById('offcanvasNavbar').addEventListener('hidden.bs.offcanvas', function () {
+    document.querySelector('.content').style.display = 'block';
+  });
+</script>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
