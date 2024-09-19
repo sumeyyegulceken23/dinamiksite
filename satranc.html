@@ -92,6 +92,7 @@
       .offcanvas {
         display: block; /* Offcanvas sadece mobilde görünür */
       }
+      
     }
 
     @media (min-width: 769px) {
@@ -504,6 +505,27 @@
     border: 0;
 }
   
+/* Mobil uyumlu düzenleme için */
+@media only screen and (max-width: 768px) {
+  .content {
+    padding: 10px;
+    font-size: 14px; /* Yazı boyutunu küçültüyoruz */
+  }
+
+  .container {
+    padding: 10px; /* Genel boşlukları mobilde azaltıyoruz */
+  }
+
+  .col-md-4 {
+    margin-bottom: 20px; /* Kolonlar arasında boşluk ekliyoruz */
+  }
+
+  video {
+    width: 100%;
+    height: auto; /* Videonun taşmasını önlemek için boyutu ayarlıyoruz */
+    border-radius: 8px; /* Videonun kenarlarını yuvarlıyoruz */
+  }
+}
 
 </style>
 </head>
@@ -899,7 +921,8 @@
         </table>
         <div class="map-container">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.3204063836492!2d28.622121375130394!3d41.018245618812536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b55f57267279ab%3A0xea99d76d26d0b49c!2sDinamik%20Ki%C5%9Fisel%20Geli%C5%9Fim%20Kursu!5e0!3m2!1str!2str!4v1724840940456!5m2!1str!2str" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>     
+        </div> 
+      </div>    
     </div>
   </div>
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
