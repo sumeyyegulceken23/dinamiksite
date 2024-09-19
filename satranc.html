@@ -80,6 +80,7 @@
     }
     .offcanvas-body .offcanvas-nav-item:last-child .offcanvas-nav-link {
       border-bottom: none;
+      text-decoration: none;
     }
 
     @media (max-width: 768px) {
@@ -521,9 +522,10 @@
   }
 
   video {
-    width: 100%;
-    height: auto; /* Videonun taşmasını önlemek için boyutu ayarlıyoruz */
-    border-radius: 8px; /* Videonun kenarlarını yuvarlıyoruz */
+    width: 100%; /* Videonun genişliğini ekran boyutuna göre ayarlıyoruz */
+    height: auto; /* Yüksekliği orantılı olarak ayarlanıyor */
+    display: block; /* Videonun tam görünmesini sağlıyoruz */
+    margin: 0 auto; /* Videoyu ortalıyoruz */
   }
   h1 {
     font-size: 24px;
